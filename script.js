@@ -10,11 +10,11 @@ console.log(`<p>${firstName} ${lastName} has a social ${ssn}</p>`);
  */
 
  const backpack = {
-    name: "Everyday Backpack",
+    name: "Everyday Backpack", //separated by comma
     volume: 30,
-    color: "grey",
+    color: "grey", //only contain letters, digits, dollar signs, underscore
     pocketNum: 15,
-    strapLength: {
+    strapLength: { //camelCase property names avoid issues
       left: 26,
       right: 26,
     },
@@ -29,5 +29,8 @@ console.log(`<p>${firstName} ${lastName} has a social ${ssn}</p>`);
   };
   
   console.log("The backpack object:", backpack);
-  console.log("The pocketNum value:", backpack.pocketNum);
-  
+  console.log("The pocketNum value:", backpack.pocketNum); //dot notation - most common
+
+  console.log("The pocketNum value:", backpack["pocketNum"]); //bracket notation - need to pass variable or property with non-standard characters
+  var query = "pocketNum";
+  console.log("The pocketNum value:", backpack[query]);
