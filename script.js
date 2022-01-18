@@ -1,10 +1,3 @@
-const firstName = "Joe";
-const lastName = "Perez";
-const ssn = 1234567;
-
-console.log(`<p>${firstName} ${lastName} has a social ${ssn}</p>`);
-
-
 /**
  * Create a Backpack object.
  */
@@ -32,7 +25,3 @@ console.log(`<p>${firstName} ${lastName} has a social ${ssn}</p>`);
   console.log("The backpack object:", backpack);
   console.log("The pocketNum value:", backpack.pocketNum); //dot notation - most common
   console.log("The strapLength Left value:", backpack.strapLength.left);
-
-  console.log("The pocketNum value:", backpack["pocketNum"]); //bracket notation - need to pass variable or property with non-standard characters
-  var query = "pocketNum";
-  console.log("The pocketNum value:", backpack[query]);
