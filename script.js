@@ -8,7 +8,7 @@
 
  const everydayPack = new Backpack(
    "Everyday Backpack",
-   30,
+   20,
    "grey",
    15,
    26,
@@ -50,14 +50,12 @@
  
  main.innerHTML = content;
 
- const backpackName = document.querySelector("main .backpack__features li");
+ const backpackName = document.querySelector("main .backpack__features li:last-child");
 
  const listItems = document.querySelectorAll("main .backpack__features li");
- 
- console.log("querySelector:",backpackName);
 
- console.log("querySelectorAll:",listItems);
+ backpackName.style.backgroundColor = "#aa1010"
 
- listItems.forEach(item => item.style.backgroundColor = "#aa1010");
+ //listItems.forEach(item => item.style.backgroundColor = "#aa1010");
 
  //document.body.style.backgroundColor = "red";
