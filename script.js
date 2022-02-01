@@ -1,27 +1,41 @@
-const backpack = {
-  name: "Everyday Backpack",
-  volume: 30,
-  color: "grey",
-  pocketNum: 15,
-  strapLength: {
-    left: 26,
-    right: 26,
-  },
-  lidOpen: false,
-  toggleLid: function (lidStatus) {
-    this.lidOpen = lidStatus;
-  },
-  newStrapLength: function (lengthLeft, lengthRight) {
-    this.strapLength.left = lengthLeft;
-    this.strapLength.right = lengthRight;
-  },
-};
+/**
+ * Traverse the DOM tree using querySelector() and querySelectorAll()
+ * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
+ * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
+ */
 
-console.log("The backpack object:", backpack);
-console.log("The pocketNum value:", backpack.pocketNum);
+import Backpack from "./Backpack.js";
 
-console.log('left before:', backpack.strapLength.left);
+const everydayPack = new Backpack(
+);
 
-backpack.newStrapLength(10,15);
+const content = `
+     <figure class="backpack__image">
+       <img src= alt="" />
+     </figure>
+     <h1 class="backpack__name"></h1>
+     <ul class="backpack__features">
+     </ul>
+   </article>
+ `;
 
-console.log('left after:', backpack.strapLength.left);
+const main = document.querySelector(".maincontent");
+
+
+const newArticle = document.createElement('article');
+newArticle.classList.add('backpack');
+newArticle.setAttribute('id','everyday');
+newArticle.innerHTML = content;
+
+main.append(newArticle);
+
+//main.innerHTML = content;
+
+
+
+// const listItem = document.querySelector("ul li:first-child");
+
+// listItem.classList.toggle("webdev");
+
+// const backpackTitle = document.querySelector('h1').className;
+// document.querySelector('img').setAttribute('alt', backpackTitle);
