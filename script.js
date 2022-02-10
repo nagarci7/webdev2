@@ -1,41 +1,27 @@
 /**
- * Traverse the DOM tree using querySelector() and querySelectorAll()
- * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
- * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
+ * A standard function
+ * @link https://developer.mozilla.org/en-US/docs/Glossary/Function
  */
 
-import Backpack from "./Backpack.js";
+const greenPack = {
+  name: "Frog Pack",
+  color: "green",
+  volume: 8,
+  pocketNum: 3,
+};
 
-const everydayPack = new Backpack(
-);
+const addPack = function (currentPack) {
+  const newArticle = document.createElement("article");
+  newArticle.innerHTML = `
+    <h1>${currentPack.name}</h1>
+    <ul>
+      <li>Volume: ${currentPack.volume}</li>
+      <li>Color: ${currentPack.color}</li>
+      <li>Number of pockets: ${currentPack.pocketNum}</li>
+    </ul>
+  `;
+  return newArticle;
+};
 
-const content = `
-     <figure class="backpack__image">
-       <img src= alt="" />
-     </figure>
-     <h1 class="backpack__name"></h1>
-     <ul class="backpack__features">
-     </ul>
-   </article>
- `;
-
-const main = document.querySelector(".maincontent");
-
-
-const newArticle = document.createElement('article');
-newArticle.classList.add('backpack');
-newArticle.setAttribute('id','everyday');
-newArticle.innerHTML = content;
-
-main.append(newArticle);
-
-//main.innerHTML = content;
-
-
-
-// const listItem = document.querySelector("ul li:first-child");
-
-// listItem.classList.toggle("webdev");
-
-// const backpackTitle = document.querySelector('h1').className;
-// document.querySelector('img').setAttribute('alt', backpackTitle);
+const main = document.querySelector("main");
+main.append(addPack(greenPack));
